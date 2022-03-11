@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.nombre {
+    font-family: 'Great Vibes', sans-serif;
+    font-weight: 500;
+    font-size: 10rem;
+    text-align: center;
+    color: hsla(38, 61%, 55%);
+    padding-top: 25px;
+}
+
+.fecha {
+    font-family: 'Great Vibes', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    color: hsla(38, 61%, 55%);
+}
+
+.quince {
+    font-family: 'Great Vibes', sans-serif;
+    font-weight: 400;
+    font-size: 5rem;
+    text-align: center;
+    color: hsla(38, 61%, 55%);
+    margin-top: 35px;
+}

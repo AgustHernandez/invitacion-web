@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100;1,200;1,300;1,400&display=swap');
+
+.parrafoEncab {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-align: center;
+    color: hsla(38, 61%, 55%);
+    margin-top: 15px;
+}
