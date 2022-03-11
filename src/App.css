@@ -13,7 +13,7 @@
   .App {
     background-image: url("./assets/FondoMovil.png");
     width: auto;
-    height: 3545px;
+    height: auto;
   }
 }
 
