@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
+
+.container1 {
+    width: 180px;
+    height: 250px;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to bottom, #FDEFD2 0%, #BFA189 100%, #ECCAAE, #FAEAD0);
+    border-image-slice: 1;
+}

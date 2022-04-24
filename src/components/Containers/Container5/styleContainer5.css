@@ -1,0 +1,7 @@
+.container5 {
+    width: 200px;
+    height: 250px;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to bottom, #FDEFD2 0%, #BFA189 100%, #ECCAAE, #FAEAD0);
+    border-image-slice: 1;
+}
