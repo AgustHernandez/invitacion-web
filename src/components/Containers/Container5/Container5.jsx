@@ -1,11 +1,12 @@
 import './styleContainer5.css'
 
+import Componente5 from '../../Components/Componente5/Componente5'
 import React from 'react'
 
 function Container5() {
   return (
     <div className='container5'>
-        Hola
+        <Componente5/>
     </div>
   )
 }

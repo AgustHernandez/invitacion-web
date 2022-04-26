@@ -2,9 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&display=swap');
 
+.componente5 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
-
-.tituloComponente1 {
+.tituloComponente5 {
     font-family: 'Waterfall', cursive;
     font-weight: 500;
     font-size: 4rem;
@@ -13,40 +21,23 @@
     margin: 5px 0px;
 }
 
-.nombreSalon {
-    font-family: 'Great Vibes', sans-serif;
-    font-weight: 500;
-    font-size: 3.5rem;
-    text-align: center;
-    color: hsla(38, 61%, 55%);
-}
-
-.direccionSalon {
+.textoAsistencia {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
     color: hsla(38, 61%, 55%);
     margin: 10px 0px;
 }
 
-.horario {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-align: center;
-    color: hsla(38, 61%, 55%);
-    margin: 10px 0px 0px 0px;
-}
-
-.sectionBotonMaps {
+.sectionBotonAsistencia {
     display: flex;
     justify-content: center;
     margin-top: 5px;
 }
 
-.botonMaps {
-    width: 100px;
+.botonAsistencia {
+    width: 150px;
     height: 20px;
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;

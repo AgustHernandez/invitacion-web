@@ -6,7 +6,7 @@ import React from 'react'
 function Container1() {
   return (
     <div className='container1'>
-        <Componente1/>
+      <Componente1/>
     </div>
   )
 }

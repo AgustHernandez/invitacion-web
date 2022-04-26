@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.componente2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.tituloComponente2 {
+    font-family: 'Waterfall', cursive;
+    font-weight: 500;
+    font-size: 4rem;
+    text-align: center;
+    color: hsla(38, 61%, 55%);
+    margin: 5px 0px;
+}
+
+.dressCode {
+    font-family: 'Great Vibes', sans-serif;
+    font-weight: 500;
+    font-size: 3.5rem;
+    text-align: center;
+    color: hsla(38, 61%, 55%);
+}
