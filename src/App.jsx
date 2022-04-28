@@ -13,7 +13,9 @@ function App() {
   return (
     <div className="App">
       <Encabezado/>
-      <ContainerReloj/>
+      <div className="reloj">
+        <ContainerReloj/>
+      </div>
       <div className='containerComponentes'>
         <Container1/>
         <Container2/>

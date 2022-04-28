@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
+
+.containerReloj {
+    width: 50%;
+    heigth: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(242,242,242,0.5270658605238971);
+}
+
+.tituloReloj {
+    font-family: 'Waterfall', cursive;
+    font-weight: 500;
+    font-size: 4rem;
+    text-align: center;
+    color: hsla(38, 61%, 55%);
+    margin: 5px 0px;
+}

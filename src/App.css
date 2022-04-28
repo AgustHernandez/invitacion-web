@@ -9,10 +9,17 @@
   background-repeat: no-repeat;
 }
 
+.reloj {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
 .containerComponentes {
   display: flex;
   flex-direction: column;
 }
+
 
 @media (min-width: 375px) and (max-width: 768px) {
   .App {

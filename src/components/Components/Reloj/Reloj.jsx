@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
 import './styleReloj.css';
 
+import React, { useEffect, useState } from 'react'
 
 function Reloj({ deadline }) {
   const [dias, setDias] = useState(0)
@@ -35,10 +35,18 @@ function Reloj({ deadline }) {
 
   return (
     <div>
-      <div className="Clock-days">{leading0(dias)} Days</div>
-      <div className="Clock-hours">{leading0(horas)} Hours</div>
-      <div className="Clock-minutes">{leading0(minutos)} Minutes</div>
-      <div className="Clock-seconds">{leading0(segundos)} Seconds</div>
+      <div className='containerCrono'>
+        <h4 className="Clock-days">{leading0(dias)}</h4>
+        <h4 className="Clock-hours">{leading0(horas)}</h4>
+        <h4 className="Clock-minutes">{leading0(minutos)}</h4>
+        <h4 className="Clock-seconds">{leading0(segundos)}</h4>
+      </div>
+      <div className='containerTitulos'>
+        <h4>Días</h4>
+        <h4>Horas</h4>
+        <h4>Min.</h4>
+        <h4>Seg.</h4>
+      </div>
     </div>
   )
 }

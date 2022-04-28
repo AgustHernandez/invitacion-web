@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,200;1,300&display=swap');
+
+.containerCrono {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    font-family: 'Mali', cursive;
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    padding: 5px 0px;
+}
+
+.containerTitulos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Mali', cursive;
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    padding: 5px 0px;
+}

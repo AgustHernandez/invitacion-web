@@ -3,6 +3,7 @@ import './styleComponente1.css'
 import React from 'react'
 
 function Componente1() {
+
   return (
     <div>
         <div>
@@ -12,7 +13,9 @@ function Componente1() {
             <h5 className='horario'>21 a 05 hs.</h5>
         </div>
         <div className='sectionBotonMaps'>
+          <a href='https://g.page/elcastilloeventos?share' target='_blank' rel="noreferrer" >
             <button className='botonMaps'>¿ Cómo llegar ?</button>
+          </a>
         </div>
     </div>
   )
