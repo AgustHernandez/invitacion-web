@@ -36,6 +36,12 @@
   }
 }
 
+@media (min-width: 320px) and (max-width: 399px) {
+  .containerComponentes {
+    margin: 0px 15px;
+  } 
+}
+
 
 /*.App-logo {
   height: 40vmin;
