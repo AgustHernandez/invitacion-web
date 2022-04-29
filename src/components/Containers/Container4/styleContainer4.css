@@ -10,3 +10,10 @@
     border-image-slice: 1;
     background-color: rgba(242,242,242,0.5270658605238971);
 }
+
+@media (min-width: 320px) and (max-width: 399px) {
+    .container4 {
+        width: 175px;
+        height: 250px;
+    }
+}

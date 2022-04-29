@@ -2,9 +2,16 @@
     width: 180px;
     height: 250px;
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 2 / 4;
     border: 5px solid transparent;
     border-image: linear-gradient(to bottom, #FDEFD2 0%, #BFA189 100%, #ECCAAE, #FAEAD0);
     border-image-slice: 1;
     background-color: rgba(242,242,242,0.5270658605238971);
+}
+
+@media (min-width: 320px) and (max-width: 399px) {
+    .container3 {
+        width: 160px;
+        height: 250px;
+    }
 }
