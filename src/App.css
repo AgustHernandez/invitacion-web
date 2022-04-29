@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-size: 62.5%;
 }
 
@@ -16,16 +17,22 @@
 }
 
 .containerComponentes {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 20px;
+  justify-content: center;
+  place-items: center;
 }
 
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .App {
     background-image: url("./assets/FondoMovil.png");
     width: auto;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 

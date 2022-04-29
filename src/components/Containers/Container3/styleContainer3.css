@@ -1,7 +1,8 @@
 .container3 {
     width: 180px;
     height: 250px;
-    margin: 10px 10px 10px 175px;
+    grid-column: 2;
+    grid-row: 3;
     border: 5px solid transparent;
     border-image: linear-gradient(to bottom, #FDEFD2 0%, #BFA189 100%, #ECCAAE, #FAEAD0);
     border-image-slice: 1;
