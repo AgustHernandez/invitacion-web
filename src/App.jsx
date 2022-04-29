@@ -17,11 +17,11 @@ function App() {
         <ContainerReloj/>
       </div>
       <div className='containerComponentes'>
-        <Container1/>
-        <Container2/>
-        <Container3/>
-        <Container4/>
-        <Container5/>
+        <Container1 className='containerComponent1'/>
+        <Container2 className='containerComponent2'/>
+        <Container3 className='containerComponent3'/>
+        <Container4 className='containerComponent4'/>
+        <Container5 className='containerComponent5'/>
       </div>
       <Saludo/>
     </div>
