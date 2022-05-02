@@ -1,6 +1,6 @@
 .container3 {
     width: 180px;
-    height: 250px;
+    height: 270px;
     grid-column: 2;
     grid-row: 2 / 4;
     border: 5px solid transparent;
@@ -12,6 +12,6 @@
 @media (min-width: 320px) and (max-width: 399px) {
     .container3 {
         width: 160px;
-        height: 250px;
+        height: 270px;
     }
 }
