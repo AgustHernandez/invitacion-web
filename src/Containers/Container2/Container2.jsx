@@ -1,6 +1,6 @@
 import './styleContainer2.css'
 
-import Componente2 from '../../Components/Componente2/Componente2'
+import Componente2 from '../../components/Componente2/Componente2'
 import React from 'react'
 
 function Container2() {

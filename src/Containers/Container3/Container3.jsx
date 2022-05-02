@@ -1,6 +1,6 @@
 import './styleContainer3.css'
 
-import Componente3 from '../../Components/Componente3/Componente3'
+import Componente3 from '../../components/Componente3/Componente3'
 import React from 'react'
 
 function Container3() {

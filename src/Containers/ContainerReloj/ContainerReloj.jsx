@@ -1,7 +1,7 @@
 import './styleContainerReloj.css'
 
 import React from 'react'
-import Reloj from '../../Components/Reloj/Reloj'
+import Reloj from '../../components/Reloj/Reloj'
 
 function ContainerReloj() {
     
