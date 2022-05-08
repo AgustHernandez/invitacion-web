@@ -4,6 +4,7 @@ import TestEnvLabel from './components/TestEnvLabel/TestEnvLabel';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
+  console.log(process.env.NODE_ENV)
   return (
     <div>
       {process.env.NODE_ENV != 'production' && <TestEnvLabel/>}
