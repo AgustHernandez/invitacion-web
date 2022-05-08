@@ -1,23 +1,24 @@
 import './styleComponente5.css'
 import React from 'react'
-import { collection, getDocs, getFirestore,query,where } from 'firebase/firestore'
+import { getFirestore, doc,getDoc  } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import {firebase} from '../../firebase/config.js'
+import { useParams } from 'react-router-dom';
 
 function Componente5() {
   const [loading, setLoading] = useState(true)
   const [family, setFamily] = useState({ 'name': 'testName' })
-
+  const {familyId} = useParams()
+  
   useEffect(() => {
     const db = getFirestore()
-    const queryCollection = collection(db, 'families')
-    //const queryFilter = query( queryCollection, where( db.FieldPath.documentId(), '==', "k553gc8vmxNEZcgAoxJY" ))
-    getDocs(queryCollection)
-    .then(resp => setFamily(resp.docs[0].data()))
+    const docRef = doc(db,"families",familyId);
+    getDoc(docRef)
+    .then(resp => setFamily(resp.data()))
     .catch(err => console.log(err))
-    .finally(() => setLoading(false))
+    .finally(() => setLoading(false));
   })
-
+  
   return (
     <div className='componente5'>
           <div>
