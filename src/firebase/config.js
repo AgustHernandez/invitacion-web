@@ -1,4 +1,3 @@
-//import {fb ,initializeApp } from "firebase/app";
 import fb from 'firebase/compat/app';
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIRESTORE_API_KEY,
