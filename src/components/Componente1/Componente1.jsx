@@ -5,7 +5,7 @@ import React from 'react'
 function Componente1() {
 
   return (
-    <div>
+    <div className='componente1'>
         <div>
             <h4 className='tituloComponente1'>Salón</h4>
             <h3 className='nombreSalon'>El Castillo Eventos</h3>
