@@ -1,0 +1,4 @@
+.invitado {
+    display: flex;
+    flex-direction: column;
+}

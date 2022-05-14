@@ -2,7 +2,7 @@
 
 .container5 {
     width: 280px;
-    height: 200px;
+    height: auto;
     grid-column: -3 / -1;
     grid-row: 5;
     border: 5px solid transparent;
