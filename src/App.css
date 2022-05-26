@@ -6,8 +6,8 @@
 }
 
 .App {
-  background-image: url("./assets/Fondo.png");
-  background-repeat: no-repeat;
+  background-image: url("./assets/Fondo.jpg");
+    background-repeat: repeat;
 }
 
 .reloj {
