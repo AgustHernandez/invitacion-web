@@ -27,7 +27,8 @@
 
 @media (min-width: 320px) and (max-width: 767px) {
   .App {
-    background-image: url("./assets/FondoMovil.png");
+    background-image: url("./assets/Fondo.jpg");
+    background-repeat: repeat;
     width: auto;
     height: auto;
     display: flex;
