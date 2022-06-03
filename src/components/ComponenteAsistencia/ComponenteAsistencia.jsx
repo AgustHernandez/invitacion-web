@@ -1,6 +1,6 @@
 import './styleComponenteAsistencia.css'
 
-import { Checkbox, FormControlLabel, FormGroup, TextField } from '@mui/material'
+import { Checkbox, FormControlLabel, FormGroup,Select,MenuItem, InputLabel} from '@mui/material'
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 
@@ -18,9 +18,14 @@ function ComponenteAsistencia() {
         const docRef = doc(db,"families", familyId);
         getDoc(docRef)
         .then(resp => setFamily(resp.data()))
-        .catch(err => console.log(err))
+        .catch(err => console.log("ComponenteAsistencia - Error: "+err))
         .finally(() => setLoading(false));
+
     })
+
+    const confirmaAsistencia = () => {
+
+    }
 
     return (
         <>
@@ -30,8 +35,19 @@ function ComponenteAsistencia() {
                     {family.members.map(m => (
                     <div className='invitado'>
                         <FormControlLabel control={<Checkbox defaultChecked />} key={m.name} label={m.name} className='textoAsistencia' />
-                        <TextField id="outlined-basic" label="Alimentación" variant="outlined" />
+                        <InputLabel variant="standard" htmlFor="uncontrolled-native">
+                            Alimentacion
+                        </InputLabel>
+                        <Select
+                                labelId="demo-simple-select-label" id="demo-simple-select" label="Age" onChange={confirmaAsistencia}>
+                            <MenuItem value={"default"}>Sin Preferencia</MenuItem>
+                            <MenuItem value={"1"}>Vegano</MenuItem>
+                            <MenuItem value={"2"}>Celíaco</MenuItem>
+                        </Select>
                     </div>))}
+                    <div className='sectionConfirmaAsistencia'>
+                        <button className='botonConfirmaAsistencia' onClick={confirmaAsistencia}> Confirmar </button>
+                    </div>
                 </FormGroup>
             }
         </>
