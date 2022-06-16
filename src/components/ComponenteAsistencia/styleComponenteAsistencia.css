@@ -20,3 +20,12 @@
     border: 1px solid #BDBDBD;
     border-radius: 3px;
 }
+
+.textoConfirmacion {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    color: hsla(38, 61%, 55%);
+    margin: 10px 0px;
+}
