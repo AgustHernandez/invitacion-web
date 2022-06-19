@@ -71,18 +71,27 @@ function ComponenteAsistencia() {
                 </div> 
                 :
                 !confirm ?
-                <FormGroup>
+                <form>
                     {family.members.map(m => (
                     <div className='invitado'>
-                        <FormControlLabel control={<Checkbox defaultChecked />} key={m.name} label={m.name} onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} className='textoAsistencia' />
-                        <InputLabel variant="standard" htmlFor="uncontrolled-native">
-                            Alimentacion
-                        </InputLabel>
-                        <select onChange={(e)=>{guardarAlimentacion(e.target.value, m.name)}}>
-                            <option value="Sin Preferencia"> Sin Preferencias </option>
-                            <option value="Vegano"> Vegano </option>
-                            <option value="Celiaco"> Celiaco </option>
-                        </select>
+                        <div className='containerInvitado'>
+                            <input type="checkbox" checked onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} className='checkInvitado'/>
+                            <label key={m.name} className='textInvitado'> {m.name} </label>
+                        </div>
+                        <div className='containerSelect'>
+                            <label className='labelAliment'>
+                                Alimentación
+                            </label>
+                            <select onChange={(e)=>{guardarAlimentacion(e.target.value, m.name)}} className="opcionesAliment" >
+                                <option value="Sin Preferencia"> Sin Preferencias </option>
+                                <option value="Vegetariano"> Vegetariano </option>
+                                <option value="Vegano"> Vegano </option>
+                                <option value="Celiaco"> Celíaco </option>
+                                <option value="Hipertenso"> Hipertenso </option>
+                                <option value="Diabetico"> Diabético </option>
+                                <option value="Infantil"> Infantil </option>
+                            </select>
+                        </div>
                     </div>))}
                     {
                         loading ?
@@ -94,7 +103,7 @@ function ComponenteAsistencia() {
                             <button className='botonConfirmaAsistencia' onClick={confirmaAsistencia}> Confirmar </button>
                         </div>
                     }
-                </FormGroup>
+                </form>
                 :
                 <div>
                     <h4 className='textoConfirmacion'>Ya confirmaste tu asistencia !</h4>
