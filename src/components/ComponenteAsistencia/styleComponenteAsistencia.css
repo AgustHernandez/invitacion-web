@@ -3,6 +3,13 @@
     flex-direction: column;
 }
 
+.textInvitado {
+    color: hsla(38, 61%, 55%);
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
 .labelAliment {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
@@ -12,12 +19,15 @@
 }
 
 .opcionesAliment {
-    font-size: 0.8rem;
+    height: 20px;
+    font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    
 }
 
 .opcionesAliment option {
+    height: 10px;
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;

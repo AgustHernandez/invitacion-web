@@ -74,7 +74,7 @@ function ComponenteAsistencia() {
                 <form>
                     {family.members.map(m => (
                     <div className='invitado'>
-                        <FormControlLabel control={<Checkbox defaultChecked />} key={m.name} label={m.name} onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} className='textoAsistencia' />
+                        <FormControlLabel control={<Checkbox defaultChecked />} key={m.name} label={m.name} onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} className='textInvitado' />
                         <label className='labelAliment'>
                             Alimentación
                         </label>
@@ -85,7 +85,7 @@ function ComponenteAsistencia() {
                             <option value="Celiaco"> Celíaco </option>
                             <option value="Hipertenso"> Hipertenso </option>
                             <option value="Diabetico"> Diabético </option>
-                            <option value="Infantil"> Diabético </option>
+                            <option value="Infantil"> Infantil </option>
                         </select>
                     </div>))}
                     {
