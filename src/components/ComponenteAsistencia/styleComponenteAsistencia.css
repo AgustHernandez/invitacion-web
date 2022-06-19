@@ -1,13 +1,33 @@
 .invitado {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+}
+
+.containerInvitado {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.checkInvitado {
+    width: 12px;
+    height: 12px;
+    align-self: center;
 }
 
 .textInvitado {
     color: hsla(38, 61%, 55%);
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    align-self: center;
+}
+
+.containerSelect {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
 }
 
 .labelAliment {
@@ -23,7 +43,6 @@
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    
 }
 
 .opcionesAliment option {
