@@ -111,7 +111,7 @@ function ComponenteAsistencia() {
                     <h4 className='textoConfirmacion'>Ya confirmaste tu asistencia !</h4>
                     <p className='textoConfirmacion'> En caso de querer modificar la siguiente información, te pedimos que nos escribas. </p>
                     {family.members.map(m => (
-                        <div>
+                        <div className='listConfirmacion'>
                             <li> {m.name} { m.confirmed ? "asistirá" : "no asistirá" } {(m.food !== "Sin preferencia" && m.confirmed ) ? "(opción "+ m.food + ")" : "" }  </li>
                         </div>
                     ))}
