@@ -64,7 +64,7 @@ function ComponenteAsistencia() {
 
     return (
         <>
-            { 
+            {
                 loading  ?
                 <div>
                     <LoadingSpinner/>
