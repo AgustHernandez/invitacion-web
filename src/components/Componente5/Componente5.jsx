@@ -1,11 +1,24 @@
 import './styleComponente5.css'
 
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
+import { useEffect, useState } from 'react'
+
 import ComponenteAsistencia from '../ComponenteAsistencia/ComponenteAsistencia'
 import React from 'react'
-import { useState } from 'react'
+import {firebase} from '../../firebase/config.js'
+import { useParams } from 'react-router-dom';
 
 function Componente5() {
   const [confirma, setConfirma] = useState(false)
+  const {familyId} = useParams()
+
+  useEffect(() => {
+    const db = getFirestore()
+    const docRef = doc(db,"families", familyId);
+      getDoc(docRef)
+      .then(resp => setConfirma(resp.data().confirm))
+      .catch(err => console.log("ComponenteAsistencia - Error: "+err))
+})
 
   const asistencia = () => {
     setConfirma(true)
