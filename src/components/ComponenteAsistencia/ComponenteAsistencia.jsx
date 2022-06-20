@@ -3,6 +3,7 @@ import './styleComponenteAsistencia.css'
 import { doc, getDoc, getFirestore, runTransaction } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 
+import { Checkbox } from '@mui/material';
 import LoadingSpinner from './../LoadingSpinner/loadingSpinner';
 import React from 'react'
 import {firebase} from '../../firebase/config.js'
@@ -20,6 +21,7 @@ function ComponenteAsistencia() {
         if(loading){
             getDoc(docRef)
             .then(resp => setFamily(resp.data()))
+            .then(() => setConfirm(family.confirm))
             .catch(err => console.log("ComponenteAsistencia - Error: "+err))
             .finally(() => setLoading(false));
         }
@@ -52,6 +54,7 @@ function ComponenteAsistencia() {
         const db = getFirestore()
         const docRef = doc(db,"families", familyId);
         family.viewedAt = Date.now()
+        family.confirm = true
         await runTransaction(db, async (transaction) => {
             await transaction.get(docRef);
             transaction.update(docRef, family);
@@ -74,7 +77,7 @@ function ComponenteAsistencia() {
                     {family.members.map(m => (
                     <div className='invitado'>
                         <div className='containerInvitado'>
-                            <input type="checkbox" checked onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} className='checkInvitado'/>
+                            <Checkbox defaultChecked onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} />
                             <label key={m.name} className='textInvitado'> {m.name} </label>
                         </div>
                         <div className='containerSelect'>
@@ -106,6 +109,12 @@ function ComponenteAsistencia() {
                 :
                 <div>
                     <h4 className='textoConfirmacion'>Ya confirmaste tu asistencia !</h4>
+                    <p className='textoConfirmacion'> En caso de querer modificar la siguiente información, te pedimos que nos escribas. </p>
+                    {family.members.map(m => (
+                        <div>
+                            <li> {m.name} { m.confirmed ? "asistirá" : "no asistirá" } {(m.food !== "Sin preferencia" && m.confirmed ) ? "(opción "+ m.food + ")" : "" }  </li>
+                        </div>
+                    ))}
                     <h5 className='textoConfirmacion'>Muchas gracias !</h5>
                 </div>
             }
@@ -114,3 +123,5 @@ function ComponenteAsistencia() {
 }
 
 export default ComponenteAsistencia
+
+/* <input type="checkbox" onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} className='checkInvitado'/> */
