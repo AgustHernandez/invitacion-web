@@ -1,6 +1,5 @@
 import './styleComponenteAsistencia.css'
 
-import { Checkbox, FormControlLabel, FormGroup, InputLabel } from '@mui/material'
 import { doc, getDoc, getFirestore, runTransaction } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 
