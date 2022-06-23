@@ -37,3 +37,10 @@
     color: hsla(38, 61%, 55%);
     margin: 5px 0px;
 }
+
+@media (min-width: 426px) {
+    .saludo {
+        justify-content: center;
+        align-items: center;
+    }
+}
