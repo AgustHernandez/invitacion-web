@@ -9,7 +9,12 @@ function Componente4() {
             <h4 className='tituloComponente4'>Regalo</h4>
         </div>
         <div>
-            <h5 className='textoRegalo'>No hace falta que me hagas ningún regalo, pero si queres hacerlo igual, en tu mesa vas a encontrar un código QR para hacerlo.</h5>
+            <h5 className='textoRegalo'>No hace falta que me hagas ningún regalo, pero en caso que quieras hacerlo, te dejo un link !</h5>
+            <div className='sectionBotonRegalo'>
+              <a href='https://linktr.ee/xvjaz' target='_blank' rel="noreferrer" >
+                <button className='botonRegalo'>Regalar</button>
+              </a>
+          </div>
         </div>
     </div>
   )

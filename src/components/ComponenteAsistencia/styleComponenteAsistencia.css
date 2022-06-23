@@ -78,3 +78,14 @@
     color: hsla(38, 61%, 55%);
     margin: 10px 0px;
 }
+
+.listConfirmacion {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: hsla(38, 61%, 55%);
+    text-align: center;
+}
+
+.listConfirmacion li {
+    font-size: 1rem;
+}

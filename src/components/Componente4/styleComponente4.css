@@ -47,3 +47,21 @@
     border: 1px solid #BDBDBD;
     border-radius: 3px;
 }
+
+.sectionBotonRegalo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.botonRegalo {
+    width: 100px;
+    height: 20px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: hsla(38, 61%, 45%);
+    background-color: #F1D2A2;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+}
