@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom';
 function ComponenteAsistencia() {
     const [loading, setLoading] = useState(true)
     const [family, setFamily] = useState({ 'name': 'testName' })
-    const [confirm, setConfirm] = useState(false)
+    const [confirmado, setConfirmado] = useState(false)
     const {familyId} = useParams()
 
     useEffect(() => {
@@ -21,7 +21,7 @@ function ComponenteAsistencia() {
         if(loading){
             getDoc(docRef)
             .then(resp => setFamily(resp.data()))
-            .then(() => setConfirm(family.confirm))
+            .then(() => setConfirmado(family.confirm))
             .catch(err => console.log("ComponenteAsistencia - Error: "+err))
             .finally(() => setLoading(false));
         }
@@ -61,7 +61,7 @@ function ComponenteAsistencia() {
             return family;
         })
         setLoading(false)
-        setConfirm(true)
+        setConfirmado(true)
     }
 
     return (
@@ -72,7 +72,7 @@ function ComponenteAsistencia() {
                     <LoadingSpinner/>
                 </div> 
                 :
-                !confirm ?
+                !confirmado ?
                 <form>
                     {family.members.map(m => (
                     <div className='invitado'>
@@ -123,5 +123,3 @@ function ComponenteAsistencia() {
 }
 
 export default ComponenteAsistencia
-
-/* <input type="checkbox" onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} className='checkInvitado'/> */
