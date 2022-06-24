@@ -15,9 +15,12 @@ function Componente5() {
   useEffect(() => {
     const db = getFirestore()
     const docRef = doc(db,"families", familyId);
+    if(!confirma)
+    {
       getDoc(docRef)
-      .then(resp => setConfirma(resp.data().confirm))
-      .catch(err => console.log("ComponenteAsistencia - Error: "+err))
+        .then(resp => setConfirma(resp.data().confirm))
+        .catch(err => console.log("ComponenteAsistencia - Error: "+err))
+    }
 })
 
   const asistencia = () => {
