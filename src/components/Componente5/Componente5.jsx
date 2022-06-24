@@ -38,11 +38,11 @@ function Componente5() {
                 <ComponenteAsistencia/>
               </div>
             :
-            <div>
+            <div className='sectionBotonAsistencia'>
                 <div>
-                    <h5 className='textoAsistencia'> Te pido que me confirmes por las personas <br/> que aparecen en el formulario. </h5>
+                    <h5 className='textoAsistencia'> Te pido que me confirmes asistencia por las personas que aparecen en el formulario y su tipo de alimentación. </h5>
                 </div>
-                <div className='sectionBotonAsistencia'>
+                <div>
                   <button className='botonAsistencia' onClick={asistencia} > Confirmar asistencia </button>
                 </div>
             </div>
