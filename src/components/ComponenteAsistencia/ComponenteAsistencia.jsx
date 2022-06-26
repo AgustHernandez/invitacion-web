@@ -85,7 +85,7 @@ function ComponenteAsistencia() {
                             <div className='containerSelect'>
                                 <label for="aliment" className='labelAliment'>Alimentación</label>
                                 <select name='aliment' id='aliment' onChange={(e)=>{guardarAlimentacion(e.target.value, m.name)}} className="opcionesAliment" required >
-                                    <option value="Elegir una opcion" selected> Elegir una opción </option>
+                                    <option value=""> Elegir una opción </option>
                                     <option value="Sin Preferencia"> Sin Preferencias </option>
                                     <option value="Vegetariano"> Vegetariano </option>
                                     <option value="Vegano"> Vegano </option>
