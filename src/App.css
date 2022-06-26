@@ -7,8 +7,9 @@
 
 .App {
   background-image: url("./assets/Fondo.jpg");
-  background-position: center;
-  background-repeat: no repeat;
+  background-color: #FFFF;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .reloj {
@@ -29,9 +30,8 @@
 @media (min-width: 320px) and (max-width: 767px) {
   .App {
     background-image: url("./assets/Fondo.jpg");
-    background-repeat: repeat;
-    width: auto;
-    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
