@@ -10,11 +10,11 @@ function Componente4() {
         </div>
         <div>
             <h5 className='textoRegalo'>No hace falta que me hagas ningún regalo, pero en caso que quieras hacerlo, te dejo un link !</h5>
-            <div className='sectionBotonRegalo'>
-              <a href='https://linktr.ee/xvjaz' target='_blank' rel="noreferrer" >
-                <button className='botonRegalo'>Regalar</button>
-              </a>
-          </div>
+        </div>
+        <div className='sectionBotonRegalo'>
+          <a href='https://linktr.ee/xvjaz' target='_blank' rel="noreferrer" >
+            <button className='botonRegalo'>Regalar</button>
+          </a>
         </div>
     </div>
   )
