@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom';
 function ComponenteAsistencia() {
     const [loading, setLoading] = useState(true)
     const [family, setFamily] = useState({ 'name': 'testName' })
-    const [confirm, setConfirm] = useState(false)
+    const [confirmado, setConfirmado] = useState(false)
     const {familyId} = useParams()
 
     useEffect(() => {
@@ -21,7 +21,7 @@ function ComponenteAsistencia() {
         if(loading){
             getDoc(docRef)
             .then(resp => setFamily(resp.data()))
-            .then(() => setConfirm(family.confirm))
+            .then(() => setConfirmado(family.confirm))
             .catch(err => console.log("ComponenteAsistencia - Error: "+err))
             .finally(() => setLoading(false));
         }
@@ -61,7 +61,7 @@ function ComponenteAsistencia() {
             return family;
         })
         setLoading(false)
-        setConfirm(true)
+        setConfirmado(true)
     }
 
     return (
@@ -72,47 +72,49 @@ function ComponenteAsistencia() {
                     <LoadingSpinner/>
                 </div> 
                 :
-                !confirm ?
-                <form>
-                    {family.members.map(m => (
-                    <div className='invitado'>
-                        <div className='containerInvitado'>
-                            <Checkbox defaultChecked onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} />
-                            <label key={m.name} className='textInvitado'> {m.name} </label>
-                        </div>
-                        <div className='containerSelect'>
-                            <label className='labelAliment'>
-                                Alimentación
-                            </label>
-                            <select onChange={(e)=>{guardarAlimentacion(e.target.value, m.name)}} className="opcionesAliment" >
-                                <option value="Sin Preferencia"> Sin Preferencias </option>
-                                <option value="Vegetariano"> Vegetariano </option>
-                                <option value="Vegano"> Vegano </option>
-                                <option value="Celiaco"> Celíaco </option>
-                                <option value="Hipertenso"> Hipertenso </option>
-                                <option value="Diabetico"> Diabético </option>
-                                <option value="Infantil"> Infantil </option>
-                            </select>
-                        </div>
-                    </div>))}
-                    {
-                        loading ?
-                        <div>
-                            <LoadingSpinner/>
-                        </div>
-                        :
-                        <div className='sectionConfirmaAsistencia'>
-                            <button className='botonConfirmaAsistencia' onClick={confirmaAsistencia}> Confirmar </button>
-                        </div>
-                    }
-                </form>
+                !confirmado ?
+                <div>
+                    <h5 className='textoAsistencia'> Te pido que me confirmes asistencia por las personas que aparecen en el formulario y su tipo de alimentación. </h5>
+                    <form>
+                        {family.members.map(m => (
+                        <div className='invitado'>
+                            <div className='containerInvitado'>
+                                <Checkbox defaultChecked onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} />
+                                <label key={m.name} className='textInvitado'> {m.name} </label>
+                            </div>
+                            <div className='containerSelect'>
+                                <label for="aliment" className='labelAliment'>Alimentación</label>
+                                <select name='aliment' id='aliment' onChange={(e)=>{guardarAlimentacion(e.target.value, m.name)}} className="opcionesAliment" required >
+                                    <option value="Elegir una opcion" selected> Elegir una opción </option>
+                                    <option value="Sin Preferencia"> Sin Preferencias </option>
+                                    <option value="Vegetariano"> Vegetariano </option>
+                                    <option value="Vegano"> Vegano </option>
+                                    <option value="Celiaco"> Celíaco </option>
+                                    <option value="Hipertenso"> Hipertenso </option>
+                                    <option value="Diabetico"> Diabético </option>
+                                    <option value="Infantil"> Infantil </option>
+                                </select>
+                            </div>
+                        </div>))}
+                        {
+                            loading ?
+                            <div>
+                                <LoadingSpinner/>
+                            </div>
+                            :
+                            <div className='sectionConfirmaAsistencia'>
+                                <button className='botonConfirmaAsistencia' onClick={confirmaAsistencia}> Confirmar </button>
+                            </div>
+                        }
+                    </form>
+                </div>
                 :
                 <div>
                     <h4 className='textoConfirmacion'>Ya confirmaste tu asistencia !</h4>
-                    <p className='textoConfirmacion'> En caso de querer modificar la siguiente información, te pedimos que nos escribas. </p>
+                    <p className='textoConfirmacion'> En caso de querer modificar la siguiente información, te pido que me escribas al whatsapp.</p>
                     {family.members.map(m => (
                         <div className='listConfirmacion'>
-                            <li> {m.name} { m.confirmed ? "asistirá" : "no asistirá" } {(m.food !== "Sin preferencia" && m.confirmed ) ? "(opción "+ m.food + ")" : "" }  </li>
+                            <li> {m.name} { m.confirmed ? "asistirá" : "no asistirá" } {(m.food !== "Sin preferencia" && m.confirmed === "asistirá" ) ? "(opción "+ m.food + ")" : "" }  </li>
                         </div>
                     ))}
                     <h5 className='textoConfirmacion'>Muchas gracias !</h5>
@@ -123,5 +125,3 @@ function ComponenteAsistencia() {
 }
 
 export default ComponenteAsistencia
-
-/* <input type="checkbox" onChange={(e) => {modificarConfirmacionInvitado(e.target.checked, m.name)}} className='checkInvitado'/> */
