@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom';
 
 function ComponenteAsistencia() {
     const [loading, setLoading] = useState(true)
+    const [updating, setUpdating] = useState(false)
     const [family, setFamily] = useState({ 'name': 'testName' })
     const [confirmado, setConfirmado] = useState(false)
     const {familyId} = useParams()
@@ -18,7 +19,7 @@ function ComponenteAsistencia() {
     useEffect(() => {
         const db = getFirestore()
         const docRef = doc(db,"families", familyId);
-        if(loading){
+        if(loading && !updating){
             getDoc(docRef)
             .then(resp => setFamily(resp.data()))
             .then(() => setConfirmado(family.confirm))
@@ -50,9 +51,15 @@ function ComponenteAsistencia() {
     }
     
     const confirmaAsistencia = async () => {
-        setLoading(true)
+        setUpdating(true)
         const db = getFirestore()
         const docRef = doc(db,"families", familyId);
+        family.members.forEach(function(member){
+            if(member.food === '')
+            {
+                member.food = 'Sin Preferencia';
+            }
+            })
         family.viewedAt = Date.now()
         family.confirm = true
         await runTransaction(db, async (transaction) => {
@@ -60,14 +67,14 @@ function ComponenteAsistencia() {
             transaction.update(docRef, family);
             return family;
         })
-        setLoading(false)
+        setUpdating(false)
         setConfirmado(true)
     }
 
     return (
         <>
             {
-                loading  ?
+                loading || updating ?
                 <div>
                     <LoadingSpinner/>
                 </div> 
@@ -84,8 +91,7 @@ function ComponenteAsistencia() {
                             </div>
                             <div className='containerSelect'>
                                 <label for="aliment" className='labelAliment'>Alimentación</label>
-                                <select name='aliment' id='aliment' onChange={(e)=>{guardarAlimentacion(e.target.value, m.name)}} className="opcionesAliment" required >
-                                    <option value=""> Elegir una opción </option>
+                                <select name='aliment' id='aliment' onChange={(e)=>{guardarAlimentacion(e.target.value, m.name)}} className="opcionesAliment" defaultValue={"Sin Preferencia"} >
                                     <option value="Sin Preferencia"> Sin Preferencias </option>
                                     <option value="Vegetariano"> Vegetariano </option>
                                     <option value="Vegano"> Vegano </option>
