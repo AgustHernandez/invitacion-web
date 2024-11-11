@@ -5,7 +5,7 @@ import Reloj from '../../components/Reloj/Reloj'
 
 function ContainerReloj() {
     
-    const deadline = "august, 13, 2022";
+    const deadline = "august, 13, 2025";
 
   return (
     <div className='containerReloj'>
